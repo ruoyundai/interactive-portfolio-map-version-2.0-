@@ -29,11 +29,6 @@ const App: React.FC = () => {
       <div 
         className="relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-[0_0_100px_rgba(0,0,0,1)] border border-white/10 group bg-[#000000]"
       >
-        {/* 
-            Fixed container logic: 
-            Removing min-h-[400px] ensures the container matches the image aspect ratio exactly on mobile.
-            This fixes the misalignment where percentages were calculated against a taller box than the image.
-        */}
         <div className="relative w-full">
           {/* Subtle scanning line overlay */}
           <div className="absolute inset-0 pointer-events-none z-20 opacity-[0.05] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px]" />
@@ -53,7 +48,7 @@ const App: React.FC = () => {
             }}
           />
 
-          {/* Hotspots Container - Now scales perfectly with the image */}
+          {/* Hotspots Container - Scales perfectly with the image */}
           <div className="absolute inset-0 z-10">
             {HOTSPOTS.map((hotspot) => (
               <HotspotOverlay key={hotspot.id} hotspot={hotspot} />
@@ -65,17 +60,10 @@ const App: React.FC = () => {
           <div className="absolute top-4 right-4 border-r border-t border-white/10 w-8 h-8 pointer-events-none" />
           <div className="absolute bottom-4 left-4 border-l border-b border-white/10 w-8 h-8 pointer-events-none" />
           <div className="absolute bottom-4 right-4 border-r border-b border-white/10 w-8 h-8 pointer-events-none" />
-          
-          {/* Mobile Instruction */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden z-20 pointer-events-none">
-            <p className="text-[9px] uppercase tracking-[0.2em] text-white/40 bg-black/60 px-3 py-1.5 rounded-full border border-white/10 backdrop-blur-md">
-              Tap to analyze data
-            </p>
-          </div>
         </div>
       </div>
 
-      {/* Footer System Info - Brightened to text-white/40 for better legibility */}
+      {/* Footer System Info */}
       <div className="mt-6 flex gap-6 text-[9px] uppercase tracking-widest text-white/20 mono pointer-events-none">
         <div className="flex items-center gap-2">
           <span>System Stable</span>
