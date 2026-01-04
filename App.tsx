@@ -17,7 +17,7 @@ const App: React.FC = () => {
       <div className="w-full max-w-5xl mb-3 flex justify-between items-end mono px-1">
         <div className="flex items-center gap-3">
           <div className="w-2 h-2 rounded-full bg-white pulse-soft shadow-[0_0_8px_rgba(255,255,255,0.9)]" />
-          <span className="text-[10px] uppercase tracking-[0.2em] text-white/90">
+          <span className="text-[10px] uppercase tracking-[0.2em] text-white">
             [ System ] Mouse hover to analyze data_
           </span>
         </div>
